@@ -13,7 +13,7 @@ namespace TestExample
 {   
     class Program
     {
-        const string resourcePath = "C:/Users/Ezzy Poo/dev/raylib_cs/LibraryTesting/TestExample/Resources/";
+        const string resourcePath = "PATH TO DIRECTORY";
 
         static void Main(string[] args)
         {
@@ -27,6 +27,7 @@ namespace TestExample
             Rectangle mainCharacterFrameRec = new Rectangle(0, 0, 84, 64);
 
             TestAnimator animator = new TestAnimator(mainCharacterSprite, mainCharacterFrameRec, 24, 1);
+            // Animation takes Name, Start Row, End Row, Start Column, End Column, and Time Between Frames
             animator.AddAnimation("test", 1, 1, 8, 16, 0.1f);
             animator.AddAnimation("Attack", 1, 1, 0, 8, 0.1f);
 
