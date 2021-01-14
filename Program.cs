@@ -30,15 +30,6 @@ namespace TestExample
             animator.AddAnimation("test", 1, 1, 8, 16, 0.1f);
             animator.AddAnimation("Attack", 1, 1, 0, 8, 0.1f);
 
-            // Another test animations with rows
-            Texture2D ojaSprite = LoadTexture(resourcePath + "Yemoja.png");
-            Rectangle ojaFrameRec = new Rectangle(0, 0, 80, 54);
-
-            TestAnimator ojaAnimator = new TestAnimator(ojaSprite, ojaFrameRec, 12, 11);
-            ojaAnimator.AddAnimation("idle", 1, 1, 0, 12, 0.2f);
-            ojaAnimator.AddAnimation("Attack", 5, 6, 7, 3, 0.2f);
-            ojaAnimator.SetCurrentAnim("Attack");
-
             SetTargetFPS(60);
 
             while(!WindowShouldClose())
@@ -55,15 +46,12 @@ namespace TestExample
                 }
 
                 animator.Update();
-                ojaAnimator.Update();
 
                 //Draw
                 BeginDrawing();
                 ClearBackground(Color.BLACK);
 
                 DrawTexturePro(mainCharacterSprite, animator.GetFrameRec(), new Rectangle(0, 0, 168, 128), new Vector2(0, 0), 0, Color.WHITE);
-                DrawTexturePro(ojaSprite, ojaAnimator.GetFrameRec(), new Rectangle(200, 0, 160, 108), new Vector2(0, 0), 0, Color.WHITE);
-
                 EndDrawing();
             }
         }
