@@ -1,7 +1,7 @@
-C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\obj\Debug\netcoreapp3.1\TestExample.csprojAssemblyReference.cache
 C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\obj\Debug\netcoreapp3.1\TestExample.AssemblyInfoInputs.cache
 C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\obj\Debug\netcoreapp3.1\TestExample.AssemblyInfo.cs
 C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\obj\Debug\netcoreapp3.1\TestExample.csproj.CoreCompileInputs.cache
+C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\obj\Debug\netcoreapp3.1\TestExample.csprojAssemblyReference.cache
 C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\bin\Debug\netcoreapp3.1\TestExample.exe
 C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\bin\Debug\netcoreapp3.1\TestExample.deps.json
 C:\Users\Ezzy Poo\dev\raylib_cs\LibraryTesting\TestExample\bin\Debug\netcoreapp3.1\TestExample.runtimeconfig.json

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Numerics;
 using Raylib_cs;
 using static Raylib_cs.Raylib;
@@ -8,6 +9,8 @@ using Newtonsoft.Json;
 
 // Testing animator
 using TestExample.AnimatorRaylib_cs;
+using TestExample.src.AnimatorComponents;
+using System.Collections.Generic;
 
 namespace TestExample
 {   
@@ -27,24 +30,15 @@ namespace TestExample
             Rectangle mainCharacterFrameRec = new Rectangle(0, 0, 84, 64);
 
             TestAnimator animator = new TestAnimator(mainCharacterSprite, mainCharacterFrameRec, 24, 1);
-            animator.AddAnimation("test", 1, 1, 8, 16, 0.1f);
-            animator.AddAnimation("Attack", 1, 1, 0, 8, 0.1f);
+            List<AnimationClip> RunFrames = new List<AnimationClip>();
+            RunFrames.Add(new AnimationClip(8, 16, 1));
+            RunFrames.Add(new AnimationClip(1, 7, 1));
+            animator.AddAnimation("RunAndAttack", RunFrames, 0.1f);
 
             SetTargetFPS(60);
 
             while(!WindowShouldClose())
             {
-                //Updates
-                if (IsKeyPressed(KeyboardKey.KEY_SPACE))
-                {
-                    if (animator.GetCurrentAnimName() == "test")
-                        animator.SetCurrentAnim("Attack");
-                    else if (animator.GetCurrentAnimName() == "test")
-                        animator.SetCurrentAnim("test");
-                    else
-                        animator.SetCurrentAnim("test");
-                }
-
                 animator.Update();
 
                 //Draw
@@ -52,6 +46,7 @@ namespace TestExample
                 ClearBackground(Color.BLACK);
 
                 DrawTexturePro(mainCharacterSprite, animator.GetFrameRec(), new Rectangle(0, 0, 168, 128), new Vector2(0, 0), 0, Color.WHITE);
+
                 EndDrawing();
             }
         }

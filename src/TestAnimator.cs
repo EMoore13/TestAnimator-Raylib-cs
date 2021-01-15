@@ -8,7 +8,7 @@ using TestExample.src.AnimatorComponents;
 
 namespace TestExample.AnimatorRaylib_cs
 {
-	public class TestAnimator
+	class TestAnimator
 	{
 		// TODO: ADD CLASS VARIABLES
 		// ------------------------------------------------------------------ //
@@ -63,15 +63,35 @@ namespace TestExample.AnimatorRaylib_cs
 			return this.rows;
         }
 
+		public bool GetIsPlaying()
+        {
+			return this.currentAnimation.GetIsPlaying();
+        }
+
+		public void Play()
+		{
+			this.currentAnimation.Play();
+		}
+
+		public void Pause()
+		{
+			this.currentAnimation.Pause();
+		}
+
+		public void Stop()
+		{
+			this.currentAnimation.Stop();
+		}
+
 		void GetImageSize(float width, float height, int col, int row)
         {
 			this.imageWidth = (int)width * col;
 			this.imageHeight = (int)height * row;
         }
 
-		public void AddAnimation(string n, int sR, int eR, int sC, int eC, float tBF)
+		public void AddAnimation(string n, List<AnimationClip> anims, float tBF)
 		{
-			Animation anim = new Animation(n, sR, eR, sC, eC, tBF);
+			Animation anim = new Animation(n, anims, tBF);
 			animations.Add(anim);
 
 			if (this.currentAnimation == null)

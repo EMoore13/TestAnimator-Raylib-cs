@@ -1,32 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using TestExample.src.AnimatorComponents;
 
 namespace TestExample.src.AnimatorComponents
 {
     class Animation
     {
         string name;
-        int startRow;
-        int endRow; // Or start row by default
-        int startColumn;
-        int endColumn; // Or last column by default;
+        List<AnimationClip> animationClipList = new List<AnimationClip>();
+        int currentCol;
+        int currentR;
+        int endCol;
+        int currentIndex;
+
         float timeBetweenFrames;
-        bool isPlaying = false;
+        bool isPlaying = true;
 
         float currentTime = 0;
-        int currentColumn;
-        int currentRow;
 
-        public Animation(string name, int startRow, int endRow, int startColumn, int endColumn, float timeBetweenFrames)
+        public Animation(string name, List<AnimationClip> animFrames, float timeBetweenFrames)
         {
             this.name = name;
-            this.startRow = startRow;
-            this.endRow = endRow == null || endRow == 0 ? startRow : endRow;
-            this.startColumn = startColumn;
-            this.currentColumn = startColumn;
-            this.endColumn = endColumn;
+            this.animationClipList = animFrames;
             this.timeBetweenFrames = timeBetweenFrames;
+            this.currentIndex = 0;
+
+            this.currentCol = this.animationClipList[this.currentIndex].GetStartColumn();
+            this.endCol = this.animationClipList[this.currentIndex].GetEndColumn();
+            this.currentR = this.animationClipList[this.currentIndex].GetRow();
         }
 
         // Getters
@@ -37,39 +38,71 @@ namespace TestExample.src.AnimatorComponents
 
         public int GetCurrentColumn()
         {
-            return this.currentColumn;
+            return this.currentCol;
         }
 
         public int GetCurrentRow()
         {
-            return this.currentRow;
+            return this.currentR;
         }
 
         public void Play()
         {
-            this.isPlaying = true;    
+            this.isPlaying = true;
+        }
+
+        public bool GetIsPlaying()
+        {
+            return this.isPlaying;
+        }
+
+        public void Pause()
+        {
+            this.isPlaying = false;
+        }
+
+        public void Stop()
+        {
+            this.isPlaying = false;
+
+            this.currentTime = 0;
+            this.currentIndex = 0;
+            this.currentCol = this.animationClipList[this.currentIndex].GetStartColumn();
+            this.endCol = this.animationClipList[this.currentIndex].GetEndColumn();
+            this.currentR = this.animationClipList[this.currentIndex].GetRow();
         }
 
         // Update
         public void Update(float dt)
         {
-            this.currentTime += dt;
-
-            if (this.currentTime > this.timeBetweenFrames)
+            if (this.isPlaying)
             {
-                this.currentTime = 0;
+                this.currentTime += dt;
 
-                this.currentColumn++;
-                Console.WriteLine(this.currentColumn);
-                if (this.currentColumn >= this.endColumn && this.startRow == this.endRow)
+                // REWRITE
+                if (this.currentTime > this.timeBetweenFrames)
                 {
-                    this.currentColumn = this.startColumn;
-                    this.currentRow = this.startRow;
-                }
-                else if (this.currentColumn >= this.endColumn && this.startRow != this.endRow)
-                {
-                    this.currentColumn = this.startColumn;
-                    this.currentRow++;
+                    this.currentTime = 0f;
+
+                    this.currentCol++;
+                    if (this.currentCol >= this.endCol)
+                    {
+                        this.currentIndex++;
+                        if (this.currentIndex < animationClipList.Count)
+                        {
+                            this.currentCol = this.animationClipList[this.currentIndex].GetStartColumn();
+                            this.endCol = this.animationClipList[this.currentIndex].GetEndColumn();
+                            this.currentR = this.animationClipList[this.currentIndex].GetRow();
+                        }
+                        else
+                        {
+                            this.currentIndex = 0;
+
+                            this.currentCol = this.animationClipList[this.currentIndex].GetStartColumn();
+                            this.endCol = this.animationClipList[this.currentIndex].GetEndColumn();
+                            this.currentR = this.animationClipList[this.currentIndex].GetRow();
+                        }
+                    }
                 }
             }
         }

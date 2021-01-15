@@ -1,12 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "WViScm4F58YD7oQ8AGk5CweBdN+hD3n/muKYeOgF3jBUdylW29AN+ZcpBTsNQdUYTNalTto6zDjJsV0RYreOxg==",
+  "dgSpecHash": "EmzRT2BvfCcEY13o1TziL5Mc50whVcXQbVXn62MJVQcO9Cxr50fCc9zZ44fasGk/CdYt0iSAFQpJ5W+//zKdiQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Ezzy Poo\\dev\\raylib_cs\\LibraryTesting\\TestExample\\TestExample.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ezzy Poo\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
-    "C:\\Users\\Ezzy Poo\\.nuget\\packages\\raylib-cs\\3.1.5\\raylib-cs.3.1.5.nupkg.sha512",
-    "C:\\Users\\Ezzy Poo\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512"
+    "C:\\Users\\Ezzy Poo\\.nuget\\packages\\raylib-cs\\3.5.0\\raylib-cs.3.5.0.nupkg.sha512"
   ],
   "logs": []
 }

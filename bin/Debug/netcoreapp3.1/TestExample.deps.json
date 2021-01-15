@@ -9,7 +9,7 @@
       "TestExample/1.0.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Raylib-cs": "3.1.5"
+          "Raylib-cs": "3.5.0"
         },
         "runtime": {
           "TestExample.dll": {}
@@ -23,10 +23,7 @@
           }
         }
       },
-      "Raylib-cs/3.1.5": {
-        "dependencies": {
-          "System.Numerics.Vectors": "4.5.0"
-        },
+      "Raylib-cs/3.5.0": {
         "runtime": {
           "lib/netstandard2.1/Raylib-cs.dll": {
             "assemblyVersion": "0.0.0.0",
@@ -52,16 +49,15 @@
           "runtimes/win-x64/native/raylib.dll": {
             "rid": "win-x64",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "3.1.0.0"
           },
           "runtimes/win-x86/native/raylib.dll": {
             "rid": "win-x86",
             "assetType": "native",
-            "fileVersion": "0.0.0.0"
+            "fileVersion": "3.1.0.0"
           }
         }
-      },
-      "System.Numerics.Vectors/4.5.0": {}
+      }
     }
   },
   "libraries": {
@@ -77,19 +73,12 @@
       "path": "newtonsoft.json/12.0.3",
       "hashPath": "newtonsoft.json.12.0.3.nupkg.sha512"
     },
-    "Raylib-cs/3.1.5": {
+    "Raylib-cs/3.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-rzv7rmxb+p/D9/ojlMsg5EZdBki/DO6lOQsVlDqTtACvyDZ3MqgaKZl9gGKJJOIl9G/zkoegDdE+IrrHM7i/IQ==",
-      "path": "raylib-cs/3.1.5",
-      "hashPath": "raylib-cs.3.1.5.nupkg.sha512"
-    },
-    "System.Numerics.Vectors/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
-      "path": "system.numerics.vectors/4.5.0",
-      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
+      "sha512": "sha512-4yIGm0ZkSjp4W9XpyY4dv20dQv9VkCXvYBL08g6pmTLL5usAHplXEedFcDOQFaE4XBud93dv0e/dyJXLOJU1HQ==",
+      "path": "raylib-cs/3.5.0",
+      "hashPath": "raylib-cs.3.5.0.nupkg.sha512"
     }
   }
 }
