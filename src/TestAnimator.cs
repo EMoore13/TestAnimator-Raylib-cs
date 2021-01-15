@@ -44,29 +44,29 @@ namespace TestExample.AnimatorRaylib_cs
 
 		// Getters
 		public Texture2D GetSprite()
-        {
+		{
 			return this.sprite;
-        }
+		}
 
 		public Rectangle GetFrameRec()
-        {
+        	{
 			return this.frameRec;
-        }
+        	}
 
 		public int GetColumns()
-        {
+        	{
 			return this.columns;
-        }
+        	}
 
 		public int GetRows()
-        {
+        	{
 			return this.rows;
-        }
+        	}
 
 		public bool GetIsPlaying()
-        {
+        	{
 			return this.currentAnimation.GetIsPlaying();
-        }
+        	}
 
 		public void Play()
 		{
@@ -84,10 +84,10 @@ namespace TestExample.AnimatorRaylib_cs
 		}
 
 		void GetImageSize(float width, float height, int col, int row)
-        {
+        	{
 			this.imageWidth = (int)width * col;
 			this.imageHeight = (int)height * row;
-        }
+        	}
 
 		public void AddAnimation(string n, List<AnimationClip> anims, float tBF)
 		{
@@ -96,19 +96,19 @@ namespace TestExample.AnimatorRaylib_cs
 
 			if (this.currentAnimation == null)
 				SetCurrentAnim(anim.GetName());
-        }
+        	}
 
 		public void SetCurrentAnim(string n)
-        {
+        	{
 			this.currentAnimation = animations.Find(a => a.GetName() == n);
-        }
+        	}
 		public string GetCurrentAnimName()
 		{
 			return this.currentAnimation.GetName();
 		}
 
 		public void Update()
-        {
+        	{
 			if (this.currentAnimation != null)
 			{
 				this.currentAnimation.Update(GetFrameTime());
