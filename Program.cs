@@ -16,7 +16,7 @@ namespace TestExample
 {   
     class Program
     {
-        const string resourcePath = "C:/Users/Ezzy Poo/dev/raylib_cs/LibraryTesting/TestExample/Resources/";
+        const string resourcePath = "PATH TO DIRECTORY";
 
         static void Main(string[] args)
         {
